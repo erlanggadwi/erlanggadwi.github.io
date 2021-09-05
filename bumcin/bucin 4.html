@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nembak Gebetan Online</title>
+	<style>
+		*{
+			margin: 0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		body {
+			font-family: sans-serif;
+			width: 100%;
+			height: 100vh;
+		}
+		.container {
+			width: 100%;
+			height: 100%;
+			margin: auto;
+			text-align: center;
+			position: relative;
+		}
+		.tombol {
+			cursor: pointer;
+			width: 100px;
+			height: 35px;
+			border: none;
+			outline: none;
+			background-color: skyblue;
+			border-radius: 5px;
+			margin: 10px;
+		}
+
+		.modal.aktif {
+			transition: .3s;
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			background-color: black;
+			color: white;
+			opacity: 1;
+			z-index: 999;
+			padding: 0 30px;
+			box-sizing: border-box;
+		}
+		.modal{
+			opacity: 0;
+			z-index: -999;
+			transition: .3s;
+			color: black;
+		}
+		.modal .close {
+			font-size: 2rem;
+			width: 50px;
+			height: 50px;
+			background-color: white;
+			color: black;
+			border-radius: 25px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top:-25px;
+		}
+		.text {
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+		}
+		a {
+			text-decoration: none;
+			color: white;
+		}
+		.text-modal{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 90%;
+		}
+	</style>
+</head>
+<body>
+	
+
+	<div class="container">
+		<style>
+		body {
+			background-image: url("assets/895662.jpg");
+			background-repeat: no-repeat;
+			background-size:cover
+		 }</style>
+		
+		<div class="text">
+			<div class="elements">
+				<h1>Hai <span class="nama">No Name</span>,<br> Maukah kamu jadi pendamping hidupku?</h1>
+		
+				<button class="iya tombol">iya</button>
+				<button class="tidak tombol">tidak</button>
+			</div>
+		</div>
+
+		<div class="modal">
+			<div class="text-modal ">
+				<h1>Jadi sekarang kita jadian dong, <a href="https://api.whatsapp.com/send?phone=6281392641570&text=Hai%20aku%20terima%20cinta%20kamu" >klik tulisan ini untuk lanjut ke </a> chatt</h1>
+			</div>
+			
+			<div class="close">
+				x
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		let inputNama = prompt("Masukan Nama : ");
+		let tombol = document.querySelectorAll(".tombol");
+		let nama = document.querySelector('.nama');
+		if(!inputNama){
+			nama.innerText = "No name";
+		}else {
+			nama.innerText = inputNama;
+		}
+		
+		let close = document.querySelector('.close');
+		close.addEventListener('click',function(){
+			if (close.parentElement.classList.contains('aktif')) {
+				close.parentElement.classList.remove('aktif');
+			}
+		});
+		[...tombol].forEach(function(i){
+				i.addEventListener('click',function(e){
+				if(e.target.classList.contains("tidak")){
+					let angka = Math.round(Math.random() * 95 - 40);
+					let angka2 = Math.round(Math.random() * 90 - 40);
+					let cek = e.target.style.transform=`translate(${angka}vw, ${angka2}vh)`;
+				}else if(e.target.classList.contains("iya")){
+					let modal = document.querySelector('.modal');
+					modal.classList.add('aktif');
+				}
+			});	
+		})
+
+	</script>
+
+</body>
+</html>
