@@ -43,13 +43,18 @@
     </div>
     <!-- Javascript -->
 	    <!--end::Card-->
-<audio autoplay="true" src="https://a.top4top.io/m_2051oipmn0.mp3"></audio>
-<script>Swal.fire(
+<script>var source = "/assets/media/instantsound/daisuki.mp3";
+var audio = new Audio();
+audio.addEventListener("load", function() {
+  audio.play();
+}, true);
+audio.src = source;
+audio.currentTime = 0;
+audio.autoplay = true;</script><script>Swal.fire(
   'Woi Sabar Yach',
   'Website Sedang Dalam Tahap Pengembangan!',
   'warning'
-)</script>
-	</div>
+)</script></div>
     <script src="./script/jquery.min.js.download"></script>
     <script src="./script/index.js.download"></script>
 
