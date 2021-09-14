@@ -9,6 +9,7 @@
 body{
     background-color: var(--bgColor);
 }
+div{max-width:600px;width:auto;margin:3em auto;padding:1.5em;background-color:rgb(44, 44, 65);border-radius:.5em}
 
 #userPhoto{
     width: 96px;
